@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link bootstrap>
+    <link rel="stylesheet">
+    <title>Name Generator</title>
+</head>
+<body>
+    <h2>Introduction</h2>
+    <p>Welcome to our simple name search program. We are glad to have you. Here, you will just require your birth date and we will generate a suitable name for you. Please give it a try. </p>
+    <p>
+        Please carry on with the form below:
+    </p>
+
+    <p>
+        <form onsubmit="getName(event)">
+            <p>
+                <label><b>Enter the date you were born:</b>
+                    <input type= "date" placeholder="dd/mm/yyyy"/> (yyy-mm-dd, such as 08/06/1995)
+                </label>
+                <p>
+                    <label><b>Choose your gender:</b>
+                        <select gender= "Gender">
+                            <option selected value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </label>
+                </p>
+            </p>
+            <p>
+                    <input type = "submit" value="submit"> <input type="reset" value="Clear">
+            </p>
+        </form>
+    </p>
+    <div>
+        <p id="output">Your name is </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
