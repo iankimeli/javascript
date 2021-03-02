@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link bootstrap>
-    <link rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text.css">
     <title>Name Generator</title>
+    
+    <script type="text/javascript">
+        function getName()
+        {
+            var female_names=["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+            var male_names=["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi"];
+            var date=new Date(document.getElementById("users_date").value); //get the date from the html element
+            var gender=document.getElementById("gender").value.toLowerCase(); //get the gender
+            var day=date.getDay();
+            //getDay() -- day of the week 0 for sunday upto 6 saturday
+            
+            if (gender==="male")
+            {document.getElementById("akan_name").innerHTML=male_names[day];}
+            else
+            {document.getElementById("akan_name").innerHTML=female_names[day];}
+            
+            return false;
+        }   
+        
+        function clearAll()
+        {
+            document.getElementById("akan_name").innerHTML="";
+        }                                                       
+    </script>
 </head>
 <body>
     <h2>Introduction</h2>
@@ -15,14 +39,14 @@
     </p>
 
     <p>
-        <form onsubmit="getName(event)">
+        <form onsubmit="return getName()">
             <p>
                 <label><b>Enter the date you were born:</b>
-                    <input type= "date" placeholder="dd/mm/yyyy"/> (yyy-mm-dd, such as 08/06/1995)
+                    <input type= "date" id="users_date" placeholder="dd/mm/yyyy" required /> (yyy-mm-dd, such as 08/06/1995)
                 </label>
                 <p>
                     <label><b>Choose your gender:</b>
-                        <select gender= "Gender">
+                        <select gender= "Gender" id="gender">
                             <option selected value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -30,13 +54,12 @@
                 </p>
             </p>
             <p>
-                    <input type = "submit" value="submit"> <input type="reset" value="Clear">
+                    <input type = "submit" value="submit"> <input type="reset" value="Clear" onclick="clearAll()">
             </p>
         </form>
     </p>
     <div>
-        <p id="output">Your name is </p>
+        <p id="output">Your akan name is: <span id="akan_name"></span> </p>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
