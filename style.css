@@ -1,6 +1,13 @@
 body {
     background-color: rgb(51, 43, 9);
-}
-body {
     background-image: url(back.jpg);
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
 }
